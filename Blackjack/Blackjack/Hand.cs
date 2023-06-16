@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Blackjack
 {
@@ -40,7 +38,7 @@ namespace Blackjack
                 }
             }
 
-            // Adjust the value of Aces if necessary
+            // As ace can be either 1 or 11, adjust the total value if necessary
             while (totalValue > 21 && numAces > 0)
             {
                 totalValue -= 10;
