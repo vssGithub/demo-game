@@ -13,8 +13,11 @@ namespace Blackjack
         {
             Cards = new List<ICard>();
             randomizer = new Randomizer();
+            InitialiseDeck();
+        }
 
-            // Generate a standard deck of 52 cards
+        private void InitialiseDeck()
+        {
             foreach (Suit suit in Enum.GetValues(typeof(Suit)))
             {
                 foreach (Rank rank in Enum.GetValues(typeof(Rank)))
@@ -47,6 +50,7 @@ namespace Blackjack
 
             ICard card = Cards[Cards.Count - 1];
             Cards.RemoveAt(Cards.Count - 1);
+
             return card;
         }
     }
