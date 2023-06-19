@@ -1,4 +1,5 @@
 ﻿using System;
+using RandomizerLibrary;
 
 namespace Blackjack
 {
@@ -39,7 +40,7 @@ namespace Blackjack
 
         private void PlayGame()
         {
-            IDeck deck = new Deck();
+            IDeck deck = new Deck(new Randomizer());
             deck.Shuffle();
 
             IHand playerHand = new Hand();

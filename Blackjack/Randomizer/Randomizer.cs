@@ -12,22 +12,7 @@ namespace RandomizerLibrary
             random = new Random();
         }
 
-        public int Next(int maxValue)
-        {
-            return random.Next(maxValue);
-        }
-
-        public int GetSecureRandom()
-        {
-            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
-            {
-                byte[] randomNumber = new byte[1000];
-                rng.GetBytes(randomNumber);
-                int value = BitConverter.ToInt32(randomNumber, 0);
-                return value % 52;
-            }
-        }
-
+        //TODO - change to uint
         public int GetSecureRng(int maxValue)
         {
             return RandomNumberGenerator.GetInt32(maxValue);

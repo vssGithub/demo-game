@@ -7,12 +7,12 @@ namespace Blackjack
     public class Deck : IDeck
     {
         public List<ICard> Cards { get; private set; }
-        private Randomizer randomizer;
+        private Randomizer _randomizer;
 
-        public Deck()
+        public Deck(Randomizer randomizer)
         {
             Cards = new List<ICard>();
-            randomizer = new Randomizer();
+            _randomizer = randomizer;
             InitialiseDeck();
         }
 
@@ -34,7 +34,7 @@ namespace Blackjack
             while (n > 1)
             {
                 n--;
-                int k = randomizer.GetSecureRng(n + 1);
+                int k = _randomizer.GetSecureRng(n + 1);
                 ICard temp = Cards[k];
                 Cards[k] = Cards[n];
                 Cards[n] = temp;
